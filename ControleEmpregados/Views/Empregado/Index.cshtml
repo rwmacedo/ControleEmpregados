@@ -1,0 +1,99 @@
+﻿@model IEnumerable<ControleEmpregados.Models.Empregado>
+
+@{
+    Layout = "_Layout1";
+}
+
+@section Styles {
+   <!-- Bootstrap CDN -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"/>
+<!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"/>
+<!-- Bootstrap-Iconpicker -->
+<link rel="stylesheet" href="dist/css/bootstrap-iconpicker.min.css"/>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.21css/jquery.dataTables.min.css"/>
+    <link rel="stylesheet" href="~/lib/datatables/css/jquery.dataTables.min.css" />
+}
+
+
+
+<div class="card-block">
+    <div class="card-header text-white bg-primary text-center h2">Empregados Registrados</div>
+    <div class="card-body">
+        <table id="tabela_empregados">
+            <thead>
+                <tr>
+                    <th>
+
+                @Html.DisplayNameFor(model => model.MATRICULA)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NOME)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DATA_DE_NASCIMENTO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FUNCAO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ESCOLARIDADE)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MATRICULA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NOME)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DATA_DE_NASCIMENTO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FUNCAO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ESCOLARIDADE)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.EmpregadoID">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.EmpregadoID">Ver</a> |
+                <a asp-action="Delete" asp-route-id="@item.EmpregadoID">Apagar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+    
+</table>
+
+
+ </div>
+    <div class="card-footer bg-primary text-center">
+        <a asp-action="Create" class="btn-primary">Criar novo empregado</a>
+    </div>
+</div>
+
+
+@section ScriptPage {
+    <environment include="Development">
+        <script src="~/lib/datatables/js/jquery.dataTables.min.js"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="//cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"
+                asp-fallback-src="~/lib/datatables/js/jquery.dataTables.min.js">
+        </script>
+    </environment>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#tabela_empregados').DataTable({
+                "order": [[1, "asc"]]
+            });
+        });
+    </script>
+}

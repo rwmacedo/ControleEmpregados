@@ -1,0 +1,62 @@
+﻿@model ControleEmpregados.Models.Empregado
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+@section Styles {
+   <!-- Bootstrap CDN -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"/>
+<!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"/>
+<!-- Bootstrap-Iconpicker -->
+<link rel="stylesheet" href="dist/css/bootstrap-iconpicker.min.css"/>
+}
+
+<div class="card-block">
+    <div class="card-header text-white bg-secondary text-center h2">Alterando uma instituição existente</div>
+    <div class="card-body">        
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="EmpregadoID" />
+            <div class="form-group">
+                <label asp-for="MATRICULA" class="control-label"></label>
+                <input asp-for="MATRICULA" class="form-control" />
+                <span asp-validation-for="MATRICULA" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NOME" class="control-label"></label>
+                <input asp-for="NOME" class="form-control" />
+                <span asp-validation-for="NOME" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DATA_DE_NASCIMENTO" class="control-label"></label>
+                <input asp-for="DATA_DE_NASCIMENTO" class="form-control" />
+                <span asp-validation-for="DATA_DE_NASCIMENTO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FUNCAO" class="control-label"></label>
+                <input asp-for="FUNCAO" class="form-control" />
+                <span asp-validation-for="FUNCAO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ESCOLARIDADE" class="control-label"></label>
+                <input asp-for="ESCOLARIDADE" class="form-control" />
+                <span asp-validation-for="ESCOLARIDADE" class="text-danger"></span>
+            </div>
+            <div class="form-group text-center h3">
+                <input type="submit" value="Salvar" class="btn btn-primary" />
+
+  <a asp-action="Index" class="btn btn-primary">Voltar</a>
+            </div>
+        </form>
+    </div>
+    <div class="card-footer bg-info text-center text-white">
+        Informe os dados acima e/ou clique em um dos botões de ação
+    </div>
+</div>
+
+@section ScriptPage {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+

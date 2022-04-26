@@ -1,0 +1,115 @@
+﻿@model ControleEmpregados.Models.Empregado
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+@section Styles {
+   <!-- Bootstrap CDN -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"/>
+<!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"/>
+<!-- Bootstrap-Iconpicker -->
+<link rel="stylesheet" href="dist/css/bootstrap-iconpicker.min.css"/>
+}
+<div class="card-block">
+    <div class="card-header text-white bg-secondary text-center h2">Exibindo um empregado existente</div>
+    <div class="card-body">
+        <div class="form-group">
+            
+            <label asp-for="MATRICULA" class="control-label"></label>
+            <br />
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                       <i class="fa fa-map-marker-alt" aria-hidden="true"></i>
+                    </span>
+                </div>
+                <input asp-for="MATRICULA" class="form-control" disabled="disabled" />
+            </div>
+            <label asp-for="NOME" class="control-label"></label>
+            <br />
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <i class="fa fa-map-marker-alt" aria-hidden="true"></i>
+                    </span>
+                </div>
+                <input asp-for="NOME" class="form-control" disabled="disabled" />
+            </div>
+              <label asp-for="DATA_DE_NASCIMENTO" class="control-label"></label>
+            <br />
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <i class="fa fa-user-circle" aria-hidden="true"></i>
+                    </span>
+                </div>
+                <input asp-for="DATA_DE_NASCIMENTO" class="form-control" disabled="disabled" />
+            </div>
+             <label asp-for="FUNCAO" class="control-label"></label>
+            <br />
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <i class="fa fa-user-circle" aria-hidden="true"></i>
+                    </span>
+                </div>
+                <input asp-for="FUNCAO" class="form-control" disabled="disabled" />
+            </div>
+             <label asp-for="ESCOLARIDADE" class="control-label"></label>
+            <br />
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <i class="fa fa-user-circle" aria-hidden="true"></i>
+                    </span>
+                </div>
+                <input asp-for="ESCOLARIDADE" class="form-control" disabled="disabled" />
+            </div>
+        </div>
+    </div>
+    <div class="card-footer bg-info text-center text-white">
+        <a asp-action="Edit" class="btn btn-primary" asp-route-id="@Model.EmpregadoID">Alterar</a> |
+        <a asp-action="Index" class="btn btn-primary">Voltar</a>
+    </div>
+</div>
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar scroll</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarScroll">
+      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Link
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled">Link</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
