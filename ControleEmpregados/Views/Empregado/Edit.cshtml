@@ -31,23 +31,34 @@
             </div>
             <div class="form-group">
                 <label asp-for="DATA_DE_NASCIMENTO" class="control-label"></label>
-                <input asp-for="DATA_DE_NASCIMENTO" class="form-control" />
+                <input type = "date" asp-for="DATA_DE_NASCIMENTO" class="form-control" />   
                 <span asp-validation-for="DATA_DE_NASCIMENTO" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="FUNCAO" class="control-label"></label>
-                <input asp-for="FUNCAO" class="form-control" />
-                <span asp-validation-for="FUNCAO" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ESCOLARIDADE" class="control-label"></label>
-                <input asp-for="ESCOLARIDADE" class="form-control" />
-                <span asp-validation-for="ESCOLARIDADE" class="text-danger"></span>
-            </div>
+      
+              <label asp-for="FUNCAO"   class="control-label"></label>  
+                <select asp-for="FUNCAO" class="form-select" >
+                <option value="Técnico Bancário">Técnico Bancário</option>
+                <option value="Assist. Junior">Assist. Junior</option>
+                <option value="Assist. Pleno">Assist. Pleno</option>
+                <option value="Assist. Senior">Assist. Senior</option>
+                <option value="Assist. Master">Assist. Master</option>
+                <option value="Coordenador">Coordenador</option>
+                 </select>
+  
+                <label asp-for="ESCOLARIDADE"   class="control-label"></label>  
+                <select asp-for="ESCOLARIDADE" class="form-select" >
+                <option value="Fundamental">Fundamental</option>
+                <option value="Medio">Medio</option>
+                <option value="Superior">Superior</option>
+                <option value="Pós Graduação">Pós Graduação</option>
+                <option value="Mestrado">Mestrado</option>
+                <option value="Doutorado">Doutorado</option>
+            </select>
+
             <div class="form-group text-center h3">
                 <input type="submit" value="Salvar" class="btn btn-primary" />
 
-  <a asp-action="Index" class="btn btn-primary">Voltar</a>
+            <a asp-action="Index" class="btn btn-primary">Voltar</a>
             </div>
         </form>
     </div>

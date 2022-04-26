@@ -3,11 +3,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ControleEmpregados.Data
 {
-    public class IESContext : DbContext
+    public class AppDBContext : DbContext
     {
         public DbSet<Empregado> Empregados { get; set; }
 
-        public IESContext(DbContextOptions<IESContext> options) : base(options)
+        public AppDBContext(DbContextOptions<AppDBContext> options) : base(options)
         {
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)

@@ -5,9 +5,9 @@ using System.Linq;
 
 namespace ControleEmpregados.Data
 {
-    public class IESDbInitializer
+    public class DbInitializer
     {
-       public static void Initialize(IESContext context)
+       public static void Initialize(AppDBContext context)
         {
             //context.Database.EnsureDeleted();
             context.Database.EnsureCreated();

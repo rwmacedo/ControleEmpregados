@@ -18,8 +18,8 @@ namespace ControleEmpregados
                 var services = scope.ServiceProvider;
                 try
                 {
-                    var context = services.GetRequiredService<IESContext>();
-                    IESDbInitializer.Initialize(context);
+                    var context = services.GetRequiredService<AppDBContext>();
+                    DbInitializer.Initialize(context);
                 }
                 catch (Exception ex)
                 {

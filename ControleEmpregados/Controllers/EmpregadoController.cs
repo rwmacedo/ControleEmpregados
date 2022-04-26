@@ -10,9 +10,9 @@ namespace ControleEmpregados.Controllers
     public class EmpregadoController : Controller
 
     {
-       private readonly IESContext _context;
+       private readonly AppDBContext _context;
 
-        public EmpregadoController(IESContext context)
+        public EmpregadoController(AppDBContext context)
         {
             this._context = context;
         }
@@ -139,7 +139,7 @@ namespace ControleEmpregados.Controllers
         var empregado = await _context.Empregados.FindAsync(id);
         _context.Empregados.Remove(empregado);
         await _context.SaveChangesAsync();
-        TempData["Message"] = "Empregado " + empregado.NOME.ToUpper() + " foi removido";
+        //TempData["Message"] = "Empregado " + empregado.NOME.ToUpper() + " foi removido";
         return RedirectToAction(nameof(Index));
     }
     private bool EmpregadoExists(long? id)
