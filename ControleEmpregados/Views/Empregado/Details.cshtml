@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="dist/css/bootstrap-iconpicker.min.css"/>
 }
 <div class="card-block">
-    <div class="card-header text-white bg-secondary text-center h2">Exibindo um empregado existente</div>
+    <div class="card-header text-white bg-dark text-center h2">Exibindo um empregado existente</div>
     <div class="card-body">     
         <div class="form-group">
             
@@ -68,14 +68,14 @@
                 <input asp-for="ESCOLARIDADE" class="form-control" disabled="disabled" />
             </div>
         </div>
-    </div>
-        <hr>
-    <div class="card-footer bg-info text-center text-white">
-        <a asp-action="Edit" class="btn btn-primary" asp-route-id="@Model.EmpregadoID">Alterar</a> |
+    </div>        
+    <div class="text-center text-white">
+        <a asp-action="Edit" class="btn btn-primary" asp-route-id="@Model.EmpregadoID">Alterar</a> 
         <a asp-action="Index" class="btn btn-primary">Voltar</a>
-        <hr>
-        <hr>
-       
+        </div class="card-footer bg-dark text-center text-white">
+            <div>
+
+        </div>               
           </div>
          </div>
         </div>

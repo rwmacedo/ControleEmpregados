@@ -14,7 +14,7 @@
 }
 
 <div class="card-block">
-    <div class="card-header text-white bg-secondary text-center h2">Apagar um empregado existente</div>
+    <div class="card-header text-white bg-dark text-center h2">Apagar um empregado existente</div>
     <div class="card-body">
         <div class="form-group">
             
@@ -41,13 +41,15 @@
             </div>
         </div>
     </div>
-    <div class="card-footer bg-info text-center text-white">
+    <div class="text-center text-white">>
         <form asp-action="Delete">
             <input type="hidden" asp-for="EmpregadoID" />
             <input type="submit" value="Remover Empregado" class="btn btn-primary" />
             <a asp-action="Index" class="btn btn-primary">Voltar</a>
         </form>
     </div>
+  
+        </div>
 </div>
 
 @section ScriptPage {
